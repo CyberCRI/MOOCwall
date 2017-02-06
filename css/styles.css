@@ -1,12 +1,9 @@
-.project {  background: yellow; border: 1px solid red;}
-.project .galleries {}
-.project .gallery { 
-	border: 1px solid green; 
-	padding: 0; }
-.project .slides {
-	width: 100%;
-}
-.project .description {}
+.container-fluid,
+.galleries,
+ #col1, #col2, #col3  { padding: 0; }
+.gallery { padding: 0; }
+.image { width: 100%; }
+.description {}
 
 
 
