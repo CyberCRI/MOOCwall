@@ -6,15 +6,16 @@ GALLERY:
 Titre, ..... // Analyse à faire
 
 ## Website's tree
-
+```
 + home.html :
 +-- galleryjs : calling up a json file's row, showing up the pop up.
 +-- Team & Mission
 +-- formulairePost.html : formulaire bilan, à rédiger
 +-- formulairePre.html : formulaire de contact, à rédiger
+```
 
 ## Website's shape
-
+```
 +------+--------------------------+
 |      |        header            |
 |      +--------------------------+
@@ -26,10 +27,12 @@ Titre, ..... // Analyse à faire
 +------+--------------------------+
 |            footer               |
 +---------------------------------+
+```
 
 ## PreForm Appel à projet
 
 Proposez votre projet !
+```
 +- Prerequis :
 +-- Equipe pédagogique (2+ personnes)
 +- Porteur :
@@ -39,6 +42,7 @@ Proposez votre projet !
 +-- Projet pédagogique (10 lignes) :
 +-- Nobre d'intervenant pédagogique / profs
 +-- Nombre d'intervenant à l'écran / acteurs
+```
 
 ## Aide à la structuration
 

@@ -1,9 +1,30 @@
 /* Build up gallery*/
 var tpl = {
-  project : `<div class="project container-fluid"></div>`,
-  galleries:`<div class="row galleries"></div>`,
-  gallery : `<div class="gallery col-md-4 col-xs-6"></div>`,
-  image   : `<img class="slides image" href="" />`
+	project : `<div class="project container-fluid"></div>`,
+	galleries:`<div class="row galleries"></div>`,
+	gallery : `<div class="gallery col-md-4 col-xs-6"></div>`,
+	image   : `<img class="slides image" href="" />`,
+	description: `<div class="row description"></div>`,
+	modal: `<!-- Trigger the modal with a button -->
+  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#mytarget">Open Modal</button>
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">"Title"</h4>
+        </div>
+        <div class="modal-body">"Content"</div>
+		<!-- <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>-->
+      </div>
+      
+    </div>
+  </div>`
 };
 
 $(function() {
@@ -15,10 +36,15 @@ var galleriesBuilder = function ($that, d){
   for(var i=0; i<images.length; i++){
     if(i % modulus ==0 && i< modulus*6) { $that.children(".galleries").append(tpl.gallery); }
     $that.find(".gallery").last().append(tpl.image);
-    $that.find(".image").last().attr({ src: images[i]})
+    $that.find(".image").last().attr({ src: `img/`+d.codename+`/`+d.codename+(i+1)+`.jpg`})
   }
-  that.find(".gallery").eq(1).removeClass("col-xs-6").addClass("hidden-sm-down");
-  that.find(".gallery").eq(4).removeClass("col-xs-6").addClass("hidden-sm-down");
+  $that.find(".gallery").eq(1).addClass("hidden-sm-down");
+  $that.find(".gallery").eq(4).addClass("hidden-sm-down");
+}
+
+var modalBuilder = function($that, d) {
+	$that.append(tpl.descriptions);
+	
 }
 
 for(var p=0; p<data.length; p++){
@@ -47,7 +73,7 @@ var carousel = function () {
     position == x.length? position = 1 : position++;
     // if (position == x.length) { position = 0 }; position++;
 
-    setTimeout(carousel, 2000); // Change image every 2 seconds
+    setTimeout(carousel, 5000); // Change image every 2 seconds
 }
 carousel();
 });
