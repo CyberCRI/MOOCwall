@@ -1,25 +1,8 @@
 .container-fluid,
 .galleries,
- #col1, #col2, #col3  { padding: 0; }
+.galleries > div { padding: 0; }
 .gallery { padding: 0; }
 .image { width: 100%; }
-.description {}
+.description { }
 
-
-
-article > .closed { display: none; }
-article { padding: 0 1em 0 1em !important; border-bottom:none !important; }
-article, h2 { margin-bottom: 0 !important; }
-article > h2 {
-  border-top: 1px solid #AAA  !important;
-  padding: .3em 0 .5em .3em  !important;
-  color: #FFF  !important;
-  background: url(../images/somethingCool.png) 0 center no-repeat !important;
-  background-color: #0ABAB5 !important;
-  font-size: 1.5em !important;
-  font-weight: 700 !important;
-  text-decoration: none !important;
-  display: block;
-}
-article > h2:hover { color: #FFF  !important; }
-article > h2:before { content: "\00a0\00a0\00a0 "; }
+.modal-dialog { margin-top: 40% !important; }

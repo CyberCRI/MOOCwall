@@ -39,11 +39,6 @@ var projects = [{ // http://www.jsoneditoronline.org/?id=86bed24507b7689237b8eef
 },
             {
   codename : "savanturiersNeuro",
-  images : ["toto", "tata", "titi", "tutu",
-            "yoyo", "yaya", "yiyi", "yuyu",
-            "yoyo", "yaya", "yiyi", "yuyu",
-            "yoyo", "yaya", "yiyi", "yuyu",
-            "yoyo", "yaya", "yiyi", "yuyu" ],
   category : "Neurosciences",
   organization: "USPC",
   url:"https://www.fun-mooc.fr/courses/USPC/37003/session01/about",
