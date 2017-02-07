@@ -9,23 +9,7 @@ var tpl = {
 	gallery : `<div class="gallery"></div>`,
 	image   : `<img class="slides image" data-toggle="modal" data-target="#targetModal" />`,
 	
-	descriptions: `<div class="row descriptions"></div>`,
-	modal: `<div class="myModal"><!-- Trigger the modal with a button -->
-	 <button class="btn btn-primary" data-toggle="modal" data-target="#targetModal">Large modal</button>
-	<!-- Modal : -->
-	<div class="modal fade" id="targetModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-	  <div class="modal-dialog modal-lg">
-		<div class="modal-content">
-		  <div class="modal-header">
-			<h4 class="modal-title" id="myLargeModalLabel">Title</h4>
-			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-			  <span aria-hidden="true">×</span></button>
-		  </div>
-		  <div class="modal-body"></div>
-		</div>
-	  </div>
-	</div>
-</div>`
+	descriptions: `<div class="row descriptions"></div>`
 };
 
 $(function() {
@@ -66,17 +50,58 @@ var galleriesBuilder = function (imgList){
 }
 galleriesBuilder(images);
 
-	
+
+var contentHtml = function (d) {
+	var sessionStr = d.session?" ("+d.session+")":"",
+		urlStr = `Homepage : <a href="`+d.url+`">click here</a> `+ sessionStr,
+		categoryStr = `Category : `+d.category,
+		organizationStr = `Organization.s / Sponsor.s: `+d.organization,
+		periodStr = `Period : `+d.start+`→`+d.end,
+		learnersStr = `Impact : `+ d.learners+` trainees/students`,
+		iframeStr = d.url?`<iframe frameborder=0 scrolling=no style='width:100%; height:400px;' src="`+d.url+`"></iframe>`:"",
+		videoStr = d.videoSrc?`<iframe frameborder="0" width="100%" data-height="270" src="`+d.videoSrc+`" allowfullscreen></iframe>`:"";
+
+	var	modal = `<div class="myModal"><!-- Trigger the modal with a button -->
+		<button class="btn btn-primary" data-toggle="modal" data-target="#targetModal">Large modal</button>
+		<!-- Modal : -->
+		<div class="modal fade" id="`+d.codename+`" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content">
+				  <div class="modal-header">
+					<h4 class="modal-title">`+d.name+`</h4>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					  <span aria-hidden="true">×</span></button>
+					</div>
+					<div class="modal-body row">
+						
+					<div class="row">
+						<div class="col-md-6 col-xs-12">
+						<b>Few elements:</b>
+						<ul>
+							<li>`+ urlStr +`</li>
+							<li>`+ categoryStr +`</li>
+							<li>`+ organizationStr +`</li>
+							<li>`+ periodStr +`</li>
+							<li>`+ learnersStr +`</li>
+						</ul></div>
+						<div class="col-md-6 col-xs-12">`+iframeStr+`</div>
+</div>
+						<div class="row">
+					<!-- <div class="col-xs-2"></div><div class="col-xs-8">`+videoStr+`</div><div class="col-xs-2"></div> -->
+</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>`;
+	return modal;
+}
 var modalBuilder = function(data) {
 	$("#hook").append(tpl.descriptions);
 	for(var i=0; i<data.length; i++){
-		var project = data[i]
-		$(".descriptions").append(tpl.modal)
-		var $that = $(".descriptions").children().eq(i);
-		$that.find("button").data("target", project.codename);
-		$that.find(".modal").attr("id", project.codename);
-		$that.find(".title").text(project.name);
-		$that.find(".modal-bod").html(project.html)
+		var project = data[i],
+			html = contentHtml(project)
+		$(".descriptions").append(html)
 	}
 }
 modalBuilder(projects);
