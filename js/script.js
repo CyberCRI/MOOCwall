@@ -119,7 +119,7 @@ var carousselBuilder = function () {
 		x.eq(position-1).css({"display":"block"});
 		position == x.length? position = 1 : position++;
 		// if (position == x.length) { position = 0 }; position++;
-		setTimeout(carousel, 3000); // Change image every 2 seconds
+		setTimeout(carousel, 12000); // Change image every 2 seconds
 	}
 	carousel();
 	});
