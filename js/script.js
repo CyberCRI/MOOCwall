@@ -12,13 +12,21 @@ var tpl = {
 	descriptions: `<div class="row descriptions"></div>`
 };
 
-$(function() {
-	
 
-$("#hook").addClass("container-fluid");
-$(".container-fluid").append(tpl.galleries);
-$(".galleries").append(tpl.columns);
+/* ******************************************************************* */
+/* Data call ********************************************************* */
+/* ******************************************************************* */
+window.onload = function() {
+  init()
+};
 
+function init() {
+  Tabletop.init({
+    key: '1Jl8hPef57ay40SKbQRd0ez2hEbDIqwhKEcDe0R4cSVc',
+    callback: moocWall,
+    simpleSheet: true
+  })
+}
 	
 var galleriesBuilder = function (imgList){
 	var col1 = $("#col1"),
@@ -48,24 +56,23 @@ var galleriesBuilder = function (imgList){
 		serieCounter++; ///           count so we get 5 images max per gallery !
 	}
 }
-galleriesBuilder(images);
 
 
 var contentHtml = function (d) {
 	var sessionStr = d.session?" ("+d.session+")":"",
 		urlStr = `Homepage : <a href="`+d.url+`">click here</a> `+ sessionStr,
-		categoryStr = `Category : `+d.category,
-		organizationStr = `Organization.s / Sponsor.s: `+d.organization,
+		categoryStr = `Categories : `+d.categories,
+		organisationStr = `Organization.s / Sponsor.s: `+d.organisation,
 		periodStr = `Period : `+d.start+`→`+d.end,
-		learnersStr = `Impact : `+ d.learners+` trainees/students`,
+		learnersStr = `Impact : `+ d.participants+` trainees/students`,
 		iframeStr = d.url?`<iframe frameborder=0 scrolling=no style='width:100%; height:400px;' src="`+d.url+`"></iframe>`:"",
-		videoStr = d.videoSrc?`<iframe frameborder="0" width="100%" data-height="270" src="`+d.videoSrc+`" allowfullscreen></iframe>`:"";
+		videoStr = d.introVideoIframeSrc?`<iframe frameborder="0" width="100%" data-height="270" src="`+d.introVideoIframeSrc+`" allowfullscreen></iframe>`:"";
 
 	var	modal = `<div class="modal fade" id="`+d.codename+`" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
 			<div class="modal-dialog modal-lg">
 				<div class="modal-content">
 				  <div class="modal-header">
-					<h4 class="modal-title">`+d.name+`</h4>
+					<h4 class="modal-title">`+d.fullname+`</h4>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					  <span aria-hidden="true">×</span></button>
 					</div>
@@ -77,7 +84,7 @@ var contentHtml = function (d) {
 						<ul>
 							<li>`+ urlStr +`</li>
 							<li>`+ categoryStr +`</li>
-							<li>`+ organizationStr +`</li>
+							<li>`+ organisationStr +`</li>
 							<li>`+ periodStr +`</li>
 							<li>`+ learnersStr +`</li>
 						</ul></div>
@@ -100,15 +107,8 @@ var modalBuilder = function(data) {
 		$(".descriptions").append(html)
 	}
 }
-modalBuilder(projects);
 
-
-});
-
-
-/* Caroussel */
-$(function() {
-	
+var carousselBuilder = function () { 
 	$(".gallery").each(function(index) {
 	var position = 1;
 	var carousel = function () {
@@ -123,8 +123,22 @@ $(function() {
 	}
 	carousel();
 	});
+ }
 
-});
+var moocWall = function (data, tabletop) {
+	console.log(JSON.stringify(data))
+	$("#hook").addClass("container-fluid");
+	$(".container-fluid").append(tpl.galleries);
+	$(".galleries").append(tpl.columns);
+
+	galleriesBuilder(images);
+	modalBuilder(data);
+	carousselBuilder();
+	
+};
+
+
+/* Caroussel */
 
 /* Tabletop data injection */
 //http://www.jsoneditoronline.org/?id=86bed24507b7689237b8eefe9498a69b

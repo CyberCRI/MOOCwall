@@ -4,7 +4,7 @@
 }
 .sidebar .logo, 
 .sidebar img  { width: 100%; }
-.sidebar .content { min-height: 12em;}
+.sidebar .content { min-height: 20em;}
 .sidebar .footer { 
 	font-size: .8em; 
 	text-align :center; 
