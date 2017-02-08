@@ -1,7 +1,7 @@
 /* Build up gallery*/
 var tpl = {
 	container:`<div class="container-fluid"></div>`,
-	galleries: `<div class="row galleries"></div>`,
+	galleries: `<div class="row no-gutters galleries"></div>`,
 	columns : `
 		<div id="col1" class="col-md-4 col-xs-6"></div>
 		<div id="col2" class="col-md-4 hidden-sm-down"></div>
@@ -61,10 +61,7 @@ var contentHtml = function (d) {
 		iframeStr = d.url?`<iframe frameborder=0 scrolling=no style='width:100%; height:400px;' src="`+d.url+`"></iframe>`:"",
 		videoStr = d.videoSrc?`<iframe frameborder="0" width="100%" data-height="270" src="`+d.videoSrc+`" allowfullscreen></iframe>`:"";
 
-	var	modal = `<div class="myModal"><!-- Trigger the modal with a button -->
-		<button class="btn btn-primary" data-toggle="modal" data-target="#targetModal">Large modal</button>
-		<!-- Modal : -->
-		<div class="modal fade" id="`+d.codename+`" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+	var	modal = `<div class="modal fade" id="`+d.codename+`" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
 			<div class="modal-dialog modal-lg">
 				<div class="modal-content">
 				  <div class="modal-header">
@@ -85,15 +82,14 @@ var contentHtml = function (d) {
 							<li>`+ learnersStr +`</li>
 						</ul></div>
 						<div class="col-md-6 col-xs-12">`+iframeStr+`</div>
-</div>
+					</div>
 						<div class="row">
 					<!-- <div class="col-xs-2"></div><div class="col-xs-8">`+videoStr+`</div><div class="col-xs-2"></div> -->
-</div>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-	</div>`;
+		</div>`;
 	return modal;
 }
 var modalBuilder = function(data) {
