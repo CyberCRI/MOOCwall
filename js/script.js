@@ -28,7 +28,7 @@ var galleriesBuilder = function (imgList){
 		serieCounter;
 	for(var i=0; i<imgList.length; i++){
 		var l = imgList[i],
-			url = `img/`+l.img,
+			url = `gallery/`+l.img,
 			imageHtml = tpl.image.replace(/targetModal/i, l.codename),
 			$col,
 			$gallery, $gallerySerie,
