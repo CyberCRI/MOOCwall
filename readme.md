@@ -67,6 +67,19 @@ Animation pédagogique
 
 
 
-To do list
+### To do list
 
 - Analyser les pages ==> modele de page standart
+- recadrer et aligner  les images du moocwall.
+- Editer le menu suivant: 
+ - MOOCWALL / STUDIO DE PRODUCTION-REALISATIONS / TEAM/CONTACT 
+- typo cyclone,  utiliser les codes couleur du logo.
+- Moocwall: commencer par les images correspondantes à la rubrique moocwall et aligner les autres dans leur chronologie de production.
+- Utiliser les codes couleur du logo.
+- Trouver un affichage élégant des infos projet
+
+### See also
+- http://cri-paris.org/mooc-factory/
+- http://codepen.io/hugolpz/pen/MYYZRm
+- [MOOC Factory Reporting](https://docs.google.com/a/cri-paris.org/forms/d/e/1FAIpQLSfXXO7ZulRZ_parU4r-R27twm4yRP-DJTx9-iDlqYifVov68g/viewform)
+
