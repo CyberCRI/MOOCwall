@@ -8,7 +8,7 @@ var tpl = {
 		<div id="col3" class="col-md-4 col-xs-6"></div>`,
 	gallery : `<div class="gallery"></div>`,
 	image   : `<img class="slides image" data-toggle="modal" data-target="#targetModal" />`,
-	
+
 	descriptions: `<div class="row descriptions"></div>`
 };
 
@@ -27,7 +27,7 @@ function init() {
     simpleSheet: true
   })
 }
-	
+
 var galleriesBuilder = function (imgList){
 	var col1 = $("#col1"),
 		col2 = $("#col2"),
@@ -47,11 +47,11 @@ var galleriesBuilder = function (imgList){
 		$gallery = $col.children().last();
 		$gallerySerie = $gallery.attr("serie");
 		if($gallerySerie != l.codename ) { $col.append(tpl.gallery); $col.children().last().attr("serie",l.codename) }
-		
+
 		$gallery = $col.children().last();
 		$gallery.append(imageHtml);
 		$gallery.children().last().attr("src",url);
-		
+
 		currentSerie = l.codename;
 		serieCounter++; ///           count so we get 5 images max per gallery !
 	}
@@ -76,20 +76,19 @@ var contentHtml = function (d) {
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					  <span aria-hidden="true">×</span></button>
 					</div>
-					<div class="modal-body row">
-						
-					<div class="row">
-						<div class="col-md-6 col-xs-12">
-						<b>Few elements:</b>
-						<ul>
-							<li>`+ urlStr +`</li>
-							<li>`+ categoryStr +`</li>
-							<li>`+ organisationStr +`</li>
-							<li>`+ periodStr +`</li>
-							<li>`+ learnersStr +`</li>
-						</ul></div>
-						<div class="col-md-6 col-xs-12">`+iframeStr+`</div>
-					</div>
+					<div class="modal-body">
+						<div class="row">
+							<div class="col-md-6 col-xs-12">
+								<b>Few elements:</b>
+								<ul>
+									<li>`+ urlStr +`</li>
+									<li>`+ categoryStr +`</li>
+									<li>`+ organisationStr +`</li>
+									<li>`+ periodStr +`</li>
+									<li>`+ learnersStr +`</li>
+								</ul></div>
+							<div class="col-md-6 col-xs-12">`+iframeStr+`</div>
+						</div>
 						<div class="row">
 					<!-- <div class="col-xs-2"></div><div class="col-xs-8">`+videoStr+`</div><div class="col-xs-2"></div> -->
 						</div>
@@ -108,7 +107,7 @@ var modalBuilder = function(data) {
 	}
 }
 
-var carousselBuilder = function () { 
+var carousselBuilder = function () {
 	$(".gallery").each(function(index) {
 	var position = 1;
 	var carousel = function () {
@@ -134,7 +133,7 @@ var moocWall = function (data, tabletop) {
 	galleriesBuilder(images);
 	modalBuilder(data);
 	carousselBuilder();
-	
+
 };
 
 
@@ -144,4 +143,3 @@ var moocWall = function (data, tabletop) {
 //http://www.jsoneditoronline.org/?id=86bed24507b7689237b8eefe9498a69b
 
 /*Ask for devis */
-
