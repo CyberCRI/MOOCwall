@@ -2,31 +2,31 @@
 	max-height:100%;
 	position:relative;
 }
-.sidebar > * { 
-	width: 100%; 
-	font-size: .8em; 
+.sidebar > * {
+	width: 100%;
+	font-size: .8em;
 	text-align :center;
-} 
+}
 .sidebar a {
-	color: #1FB4DC; 
+	color: #1FB4DC;
 }
-.sidebar .logo { 
-	width: 100%; 
+.sidebar .logo {
+	width: 100%;
 }
-.sidebar .content { 
-	min-height: 20em;
+.sidebar .content {
+	min-height: 30em;
 	padding-top: 5em;
 }
-.sidebar .content > div { 
+.sidebar .content > div {
 	/* display: none; */
 	margin:auto;
 	padding: .5em;
 	margin-top: 1em;
 	max-width: 80%;
-	color: #1FB4DC;
-	background-color: #1FB4DC;
+	color: white;
+	background-color: #FFFFFF; /* #1FB4DC; */
 }
-.sidebar .footer {  
+.sidebar .footer {
 	/*
 	position:absolute;
 	bottom:5em; */
