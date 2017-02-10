@@ -1,25 +1,42 @@
-.sider {
-   max-height:100%;
-   position:relative;
+.siderbar {
+	max-height:100%;
+	position:relative;
 }
-.sidebar .logo, 
-.sidebar img  { width: 100%; }
-.sidebar .content { min-height: 20em;}
-.sidebar .footer { 
+.sidebar > * { 
+	width: 100%; 
 	font-size: .8em; 
-	text-align :center; 
+	text-align :center;
+} 
+.sidebar a {
+	color: #1FB4DC; 
+}
+.sidebar .logo { 
+	width: 100%; 
+}
+.sidebar .content { 
+	min-height: 20em;
+	padding-top: 5em;
+}
+.sidebar .content > div { 
+	/* display: none; */
+	margin:auto;
+	padding: .5em;
+	margin-top: 1em;
+	max-width: 80%;
+	color: #1FB4DC;
+	background-color: #1FB4DC;
+}
+.sidebar .footer {  
 	/*
 	position:absolute;
 	bottom:5em; */
-	color: #1FB4DC;
-	width:100%;
+	color: #1FB4DC;;
 	height:6em;
 }
-.sidebar .footer .social i {
+.sidebar .footer .icons i {
 	font-size: 2em;
 	padding: 0 .2em 0 .2em;
 }
-.sidebar .footer a {color: #1FB4DC; }
 
 .container-fluid,
 .galleries,
