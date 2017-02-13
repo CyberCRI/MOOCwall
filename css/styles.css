@@ -5,7 +5,7 @@
 .sidebar > * {
 	width: 100%;
 	font-size: .8em;
-	text-align :center;
+	text-align: left;
 }
 .sidebar a {
 	color: #1FB4DC;
@@ -13,24 +13,28 @@
 .sidebar .logo {
 	width: 100%;
 }
-.sidebar .content {
+.sidebar .menu {
 	min-height: 30em;
 	padding-top: 5em;
+	width: 100%;
+	text-align : left;
 }
-.sidebar .content > div {
+.sidebar .menu > div {
 	/* display: none; */
-	margin:auto;
+	width: 100%;
 	padding: .5em;
-	margin-top: 1em;
-	max-width: 80%;
+	margin-top: 2em;
 	color: white;
-	background-color: #FFFFFF; /* #1FB4DC; */
+	background-color: #1FB4DC;
+	font-size: 1.5em;
+	text-transform: uppercase;
+	font-family: 'Khula', sans-serif;
+	font-weight: 900;
 }
-.sidebar .footer {
-	/*
+.sidebar .footer {	/*
 	position:absolute;
 	bottom:5em; */
-	color: #1FB4DC;;
+	color: #1FB4DC;
 	height:6em;
 }
 .sidebar .footer .icons i {
@@ -40,7 +44,7 @@
 
 .container-fluid,
 .galleries,
-.galleries > div { padding: 0; margin:0;}
+.galleries > div { padding: 0; margin:0; }
 .gallery { padding: 0; }
 .image { width: 100%; }
 .description { }
