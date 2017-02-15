@@ -1,6 +1,7 @@
-.siderbar {
+.sidebar {
 	max-height:100%;
 	position:relative;
+	padding-right: 0;
 }
 .sidebar > * {
 	width: 100%;
@@ -28,7 +29,7 @@
 	background-color: #1FB4DC;
 	font-size: 1.5em;
 	text-transform: uppercase;
-	font-family: 'Khula', sans-serif;
+	font-family: 'Open-sans', sans-serif;
 	font-weight: 900;
 }
 .sidebar .footer {	/*
