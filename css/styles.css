@@ -1,36 +1,72 @@
+/* CORE ************************** */
+
+@font-face {
+    font-family: cyclo;
+    src: url("../fonts/cyclo_inline.otf") format("opentype");
+}
+
+@font-face {
+    font-family: cyclo;
+    font-weight: bold;
+    src: url("../fonts/cyclo_background.otf") format("opentype");
+}
+
+@font-face {
+    font-family: cycloshaded;
+    font-weight: bold;
+    src: url("../fonts/cyclo_shaded.otf") format("opentype");
+}
+
+/*container element*/
+* { font-family: 'cyclo', sans-serif; }
+h1,
+h2,
+h3,
+.topbar > * { font-weight: bold; }
+a { color: #1FB4DC; }
+a:hover { color: #3E5981; }
+
+body { counter-reset: chapter 0 section 0 slide 0; }
+h3 { counter-increment: chapter; }
+h3:before { content: counter(chapter)". "; }
+/*
+h2 { counter-increment: slide -2 section; }
+h3 { counter-increment: slide; }
+h1:before { content: counter(chapter)". "; }
+h2:before { content: counter(chapter)"." counter(section)" "; }
+h3:before { content: counter(chapter)"." counter(section)"." counter(slide)" "; }
+*/
+/* TOP BAR *********************** */
+.breadcrumb { margin : 0; font-size: 1.8em; }
+.breadcrumb-item+.breadcrumb-item::before { content: "-"}
+
+/* SIDEBAR *********************** */
 .sidebar {
 	max-height:100%;
 	position:relative;
 	padding-right: 0;
 }
-.sidebar > * {
-	width: 100%;
-	font-size: .8em;
-	text-align: left;
-}
-.sidebar a,
-.breadcrumb a{
-	color: #1FB4DC;
-}
 .sidebar .logo {
 	width: 100%;
+	margin-top: 10px;
+}
+.sidebar > * {
+	width: 100%;
+	font-size: 1em;
+	text-align: left;
 }
 .sidebar .menu {
 	min-height: 30em;
 	padding-top: 5em;
-	width: 100%;
-	text-align : left;
 }
 .sidebar .menu div {
 	/* display: none; */
-	width: 100%;
 	padding: .5em;
 	margin-top: 2em;
 	color: white;
 	background-color: #1FB4DC;
 	font-size: 1.5em;
 	text-transform: uppercase;
-	font-family: 'Open-sans', sans-serif;
 	font-weight: 900;
 }
 .sidebar .footer {	/*
@@ -44,9 +80,13 @@
 	font-size: 2em;
 	padding: 0 .2em 0 .2em;
 }
+.sidebar .footer .authors {
+	font-size: 1.2em;
+	font-weight: 900;
+}
 
-.breadcrumb { margin : 0; }
 
+/* WALL ************************** */
 .container-fluid,
 .galleries,
 .galleries > div { padding: 0; margin:0; }
@@ -59,3 +99,10 @@
   opacity: 0;
   transition: visibility 0s, opacity 0.5s linear;
 }
+
+/* Description */
+article { 
+	margin: 10% 25% 0 25%;
+	font-size: 2em;
+}
+article > p { }

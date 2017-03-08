@@ -1,3 +1,58 @@
+var htmlHead = `
+	<link rel="apple-touch-icon" sizes="57x57" href="./img/favicon/apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="./img/favicon/apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="./img/favicon/apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="./img/favicon/apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="./img/favicon/apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="./img/favicon/apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="./img/favicon/apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="./img/favicon/apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="./img/favicon/apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192"  href="./img/favicon/android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="./img/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="./img/favicon/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="./img/favicon/favicon-16x16.png">
+	<link rel="manifest" href="/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="./img/favicon/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+    <meta charset="utf-8">
+    <title>MOOC Factory's wall</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+	<script src="js/bootstrap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.4.3/tabletop.min.js"></script>
+`;
+var topbar =`
+	<ol class="breadcrumb">
+		<li class="breadcrumb-item"><a href="./index.html">MOOC Wall</a></li>
+		<li class="breadcrumb-item"><a href="./intro.html">Besoin d'aide?</a></li>
+		<li class="breadcrumb-item"><a href="./description.html">Studio</a></li>
+		<li class="breadcrumb-item"><a href="./contact.html">Contact</a></li>
+	</ol>`;
+
+var sidebar = `<img class="logo" src="./img/logo-moocfactory.svg" />
+<div class="menu">
+	<a href="./index.html"><div>MoocWall</div></a>
+	<a href="./intro.html"><div>Studio de réalisation</div></a>
+	<a href="./description.html"><div>Description</div></a>
+	<!-- <div href="./">Team</div> -->
+</div>
+<div class="footer">
+	<p class="icons">
+		<a target="_blank" href="https://www.youtube.com/channel/UCAwnYwPOM-fcJ7wkfp1Xn7g" title="Youtube"><i class="fa fa-youtube-play" aria-hidden="true"></i></a> 
+		<a target="_blank" href="https://vimeo.com/criparis" title="Vimeo"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
+	</p>
+	<p class="authors">Mooc Producers</p>
+	<p class="authors">The CRI's MOOC Factory</p>
+	<p class="authors"><i class="fa fa-globe" aria-hidden="true"></i> <a target="_blank" href="http://mooc.cri-paris.org">mooc.cri-paris.org</a></p>
+</div>`;
+
+$("head").append(htmlHead);
+$(".topbar").prepend(topbar);
+$(".sidebar").append(sidebar);
+
 /* Build up gallery*/
 var tpl = {
 	container:`<div class="container-fluid"></div>`,
@@ -123,8 +178,8 @@ var carousselBuilder = function () {
 
 var moocWall = function (data, tabletop) {
 	console.log(JSON.stringify(data))
-	$("#hook").addClass("container-fluid");
-	$(".container-fluid").append(tpl.galleries);
+	$("#hook").addClass("container-fluid wall2");
+	$(".wall2").append(tpl.galleries);
 	$(".galleries").append(tpl.columns);
 
 	galleriesBuilder(wall2);
