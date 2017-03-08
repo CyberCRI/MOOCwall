@@ -20,7 +20,7 @@
 	width: 100%;
 	text-align : left;
 }
-.sidebar .menu > div {
+.sidebar .menu div {
 	/* display: none; */
 	width: 100%;
 	padding: .5em;
