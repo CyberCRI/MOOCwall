@@ -3,9 +3,8 @@ var tpl = {
 	container:`<div class="container-fluid"></div>`,
 	galleries: `<div class="row no-gutters galleries"></div>`,
 	columns : `
-		<div id="col1" class="col-md-4 col-xs-6"></div>
-		<div id="col2" class="col-md-4 hidden-sm-down"></div>
-		<div id="col3" class="col-md-4 col-xs-6"></div>`,
+		<div id="col1" class="col-lg-6 col-md-6-down"></div>
+		<div id="col2" class="col-lg-6 col-md-6-down"></div>`,
 	gallery : `<div class="gallery"></div>`,
 	image   : `<img class="slides image" data-toggle="modal" data-target="#targetModal" />`,
 
@@ -31,23 +30,21 @@ function init() {
 var galleriesBuilder = function (imgList){
 	var col1 = $("#col1"),
 		col2 = $("#col2"),
-		col3 = $("#col3"),
 		currentSerie,
 		serieCounter;
 	for(var i=0; i<imgList.length; i++){
 		var l = imgList[i],
-			url = `img/wall1/`+l.img,
+			url = `img/wall2/`+l.img,
 			imageHtml = tpl.image.replace(/targetModal/i, l.codename),
 			$col,
 			$gallery, $gallerySerie,
 			changeSerie;
-		if(i%3==0){ $col = col1; }
-		if(i%3==1){ $col = col2; }
-		if(i%3==2){ $col = col3; }
+		if(i%2==0){ $col = col1; }
+		if(i%2==1){ $col = col2; }
 		$gallery = $col.children().last();
 		$gallerySerie = $gallery.attr("serie");
 		if($gallerySerie != l.codename ) { $col.append(tpl.gallery); $col.children().last().attr("serie",l.codename) }
-
+		console.log(l.codename)
 		$gallery = $col.children().last();
 		$gallery.append(imageHtml);
 		$gallery.children().last().attr("src",url);
@@ -57,7 +54,7 @@ var galleriesBuilder = function (imgList){
 	}
 }
 
-
+/* Modale ****************************************************************** */
 var contentHtml = function (d) {
 	var sessionStr = d.session?" ("+d.session+")":"",
 		urlStr = `Homepage : <a href="`+d.url+`">click here</a> `+ sessionStr,
@@ -130,7 +127,7 @@ var moocWall = function (data, tabletop) {
 	$(".container-fluid").append(tpl.galleries);
 	$(".galleries").append(tpl.columns);
 
-	galleriesBuilder(images);
+	galleriesBuilder(wall2);
 	modalBuilder(data);
 	carousselBuilder();
 

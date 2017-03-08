@@ -15,7 +15,23 @@ var projects = [
 	hoursOfVideos:"",
 	html:""
 }];
-var images = [
+var wall2 = [
+	{ img: 'dt1.jpg', codename : 'dtpp'},
+	{ img: 'dt2.jpg', codename : 'dtpp'},
+	{ img: 'dt3.jpg', codename : 'dtpp'},
+	{ img: 'dt4.jpg', codename : 'dtpp'},
+	{ img: 'omv2_1.jpg', codename : 'originesOfLife'},
+	{ img: 'omv2_2.jpg', codename : 'originesOfLife'},
+	{ img: 'sbo1.jpg', codename : 'syntheticBio'},
+	{ img: 'sbo2.jpg', codename : 'syntheticBio'},
+	{ img: 'sbo3.jpg', codename : 'syntheticBio'},
+	{ img: 'sbo4.jpg', codename : 'syntheticBio'},
+	{ img: 'smartphone1.jpg', codename : 'smartphonelab'},
+	{ img: 'smartphone2.jpg', codename : 'smartphonelab'},
+	{ img: 'smartphone3.jpg', codename : 'smartphonelab'},
+	{ img: 'smartphone4.jpg', codename : 'smartphonelab'},
+];
+var wall1 = [
 	{ img: "savanturiers_1.jpg", codename: "savanturiersClimato" },
 	{ img: "savanturiers_2.jpg", codename: "savanturiersClimato" },
 	{ img: "savanturiers_3.jpg", codename: "savanturiersClimato" },
