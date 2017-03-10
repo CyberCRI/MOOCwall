@@ -1,31 +1,44 @@
 /* CORE ************************** */
-
+@import url('https://fonts.googleapis.com/css?family=Oswald:200,400,600');
+/*
+font-family: 'Open Sans', sans-serif;
+font-family: 'Pathway Gothic One', sans-serif;
+font-family: 'Oswald', sans-serif;
+font-family: 'Open Sans Condensed', sans-serif;
+*/
+/* 
 @font-face {
     font-family: cyclo;
     src: url("../fonts/cyclo_inline.otf") format("opentype");
 }
-
 @font-face {
     font-family: cyclo;
     font-weight: bold;
     src: url("../fonts/cyclo_background.otf") format("opentype");
 }
-
 @font-face {
     font-family: cycloshaded;
     font-weight: bold;
     src: url("../fonts/cyclo_shaded.otf") format("opentype");
-}
+} */
 
 /*container element*/
-* { font-family: 'cyclo', sans-serif; }
-h1,
-h2,
-h3,
-.topbar > * { font-weight: bold; }
+* { 
+	/* font-family: 'cyclo', sans-serif; */
+	font-family: 'Oswald', sans-serif;
+	letter-spacing: 0.0625em; /* 16 * 0.0625 = 1px */
+}
+h1,h2,h3,
+.topbar > * { 
+	font-family: 'cyclo', sans-serif;
+	text-transform: uppercase;
+	font-weight: bold; 
+}
 a { color: #1FB4DC; }
-a:hover { color: #3E5981; }
-
+a:hover { 
+	color: #3E5981; 
+    text-decoration: none;
+}
 body { counter-reset: chapter 0 section 0 slide 0; }
 h3 { counter-increment: chapter; }
 h3:before { content: counter(chapter)". "; }
@@ -85,24 +98,33 @@ h3:before { content: counter(chapter)"." counter(section)"." counter(slide)" "; 
 	font-weight: 900;
 }
 
-
 /* WALL ************************** */
 .container-fluid,
 .galleries,
 .galleries > div { padding: 0; margin:0; }
 .gallery, #header { padding: 0; }
+#col1 { padding-right: 5px}
+#col2 { padding-left: 5px}
+.gallery { margin-top: 10px; }
 .image { width: 100%; }
 .description { }
-
-.modal-dialog { margin-top: 10em !important; }
 .slides { 
   opacity: 0;
   transition: visibility 0s, opacity 0.5s linear;
 }
-
+/* MODAL ************************* */
+.modal-dialog { 
+	margin-top: 10em !important;
+}
 /* Description */
 article { 
 	margin: 10% 25% 0 25%;
 	font-size: 2em;
 }
-article > p { }
+article > p { 
+	color: #666;
+	font-weight: 200;
+	font-size: 0.7em;
+	text-transform: uppercase;
+	line-height: 2em;
+}

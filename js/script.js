@@ -18,26 +18,23 @@ var htmlHead = `
 <meta name="theme-color" content="#ffffff">
     <meta charset="utf-8">
     <title>MOOC Factory's wall</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/styles.css">
-	<script src="js/bootstrap.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.4.3/tabletop.min.js"></script>
 `;
 var topbar =`
 	<ol class="breadcrumb">
+		<li class="breadcrumb-item"><a href="./index.html">
+	<img class="logo" src="./img/logo-moocfactory.svg" style="height:1.5em;" /></a></li>
 		<li class="breadcrumb-item"><a href="./index.html">MOOC Wall</a></li>
-		<li class="breadcrumb-item"><a href="./intro.html">Besoin d'aide?</a></li>
-		<li class="breadcrumb-item"><a href="./description.html">Studio</a></li>
-		<li class="breadcrumb-item"><a href="./contact.html">Contact</a></li>
+		<li class="breadcrumb-item"><a href="./intro.html">Studio</a></li><!--
+		<li class="breadcrumb-item"><a href="./description.html">Studio de réalisation</a></li>
+		<li class="breadcrumb-item"><a href="./contact.html">Contact</a></li> -->
 	</ol>`;
 
 var sidebar = `<img class="logo" src="./img/logo-moocfactory.svg" />
 <div class="menu">
 	<a href="./index.html"><div>MoocWall</div></a>
-	<a href="./intro.html"><div>Studio de réalisation</div></a>
+	<a href="./intro.html"><div>Studio</div></a><!--
 	<a href="./description.html"><div>Description</div></a>
-	<!-- <div href="./">Team</div> -->
+	<div href="./">Team</div> -->
 </div>
 <div class="footer">
 	<p class="icons">
@@ -56,7 +53,7 @@ $(".sidebar").append(sidebar);
 /* Build up gallery*/
 var tpl = {
 	container:`<div class="container-fluid"></div>`,
-	galleries: `<div class="row no-gutters galleries"></div>`,
+	galleries: `<div class="row galleries"></div>`,
 	columns : `
 		<div id="col1" class="col-lg-6 col-md-6-down"></div>
 		<div id="col2" class="col-lg-6 col-md-6-down"></div>`,
@@ -98,7 +95,7 @@ var galleriesBuilder = function (imgList){
 		if(i%2==1){ $col = col2; }
 		$gallery = $col.children().last();
 		$gallerySerie = $gallery.attr("serie");
-		if($gallerySerie != l.codename ) { $col.append(tpl.gallery); $col.children().last().attr("serie",l.codename) }
+		if(true || $gallerySerie != l.codename ) { $col.append(tpl.gallery); $col.children().last().attr("serie",l.codename) }
 		console.log(l.codename)
 		$gallery = $col.children().last();
 		$gallery.append(imageHtml);
@@ -170,7 +167,7 @@ var carousselBuilder = function () {
 		x.eq(position-1).css({'display':'block', 'visibility': 'visible','opacity': '1'});
 		position == x.length? position = 1 : position++;
 		// if (position == x.length) { position = 0 }; position++;
-		setTimeout(carousel, 12000); // Change image every 2 seconds
+		setTimeout(carousel, 2000); // Change image every 2 seconds
 	}
 	carousel();
 	});
