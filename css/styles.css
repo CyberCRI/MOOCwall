@@ -54,6 +54,7 @@ h3:before { content: counter(chapter)"." counter(section)"." counter(slide)" "; 
 .breadcrumb-item+.breadcrumb-item::before { content: "-"}
 
 /* SIDEBAR *********************** */
+
 .sidebar {
 	max-height:100%;
 	position:relative;
@@ -118,7 +119,7 @@ h3:before { content: counter(chapter)"." counter(section)"." counter(slide)" "; 
 .container-fluid,
 .galleries,
 .galleries > div { padding: 0; margin:0; }
-.row, .wall, .cell { padding: 0; }
+.container-fluid > div, .wall, .cell { padding: 0; }
 #col1 { padding-right: .3em}
 #col2 { padding-left: .3em}
 .cell {

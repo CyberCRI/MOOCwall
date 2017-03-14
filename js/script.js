@@ -116,11 +116,11 @@ var infoboxHtml = function (d) {
 			<div class="col-md-6 col-xs-12">
 			<h4>`+d.fullname+`</h4>
 			<ul>
-				<li>Homepage : <a href="`+d.url+`">click here</a> `+ (d.session?" ("+d.session+")":"") +`</li>
+				<li><a href="`+d.url+`">Voir le site</a> `+ (d.session?" ("+d.session+")":"") +`</li>
 				<li>On `+ d.categories +`</li>
-				<li>Thanks to `+ d.organisation +`</li>
 				<li>Open on `+d.start+`→`+d.end+`</li>
-				<li>Impact : `+ d.participants+` trainees</li>
+				<li>Impact of `+ d.participants+` trainees</li>
+				<li>Thanks to `+ d.organisation +`</li>
 			</ul>
 		</div>
 
