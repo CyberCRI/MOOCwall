@@ -8,8 +8,9 @@ Titre, ..... // Analyse à faire
 ## Website's tree
 ```
 + home.html :
-+-- galleryjs : calling up a json file's row, showing up the pop up.
-+-- Team & Mission
++-- script.js : build up the page structure, then content.
++-- MOOCwall
++-- Studio
 +-- formulairePost.html : formulaire bilan, à rédiger
 +-- formulairePre.html : formulaire de contact, à rédiger
 ```
@@ -21,12 +22,10 @@ Titre, ..... // Analyse à faire
 |      +--------------------------+
 |      |                          |
 |body_l|                          |
-|      |        body_c            |
+|      |         body_c           |
 |      |                          |
 |      |                          |
 +------+--------------------------+
-|           ( footer )            |
-+---------------------------------+
 ```
 
 ## PreForm Appel à projet
@@ -65,18 +64,6 @@ Animation pédagogique
 - Aide à l'animation du MOOC
 - Aide à la rédaction d'articles scientifiques
 
-
-
-### To do list
-
-- Analyser les pages ==> modele de page standart
-- recadrer et aligner  les images du moocwall.
-- Editer le menu suivant: 
- - MOOCWALL / STUDIO DE PRODUCTION-REALISATIONS / TEAM/CONTACT 
-- typo cyclone,  utiliser les codes couleur du logo.
-- Moocwall: commencer par les images correspondantes à la rubrique moocwall et aligner les autres dans leur chronologie de production.
-- Utiliser les codes couleur du logo.
-- Trouver un affichage élégant des infos projet
 
 ### See also
 - http://cri-paris.org/mooc-factory/

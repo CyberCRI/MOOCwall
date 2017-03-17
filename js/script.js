@@ -36,8 +36,8 @@ var sidebar = `<img class="logo" src="./img/logo-moocfactory.svg" />
 	<img class="partners" src="./img/partners/USPC-Invest-MairieParis.png" />
 	<img class="partners" src="./img/partners/IIFR.png" /> 
 	<img class="partners" src="./img/partners/cri.png" />-->
-	<img class="partners" src="./img/partners/paris.png" />
-	<img class="partners" src="./img/partners/fondation_bettencourt.png" />
+	<img class="partners" src="./img/partners/Mairie_de_Paris.svg" />
+	<img class="partners" src="./img/partners/Fondation_Bettencourt_Schueller-logo.svg" />
 </div>
 <div class="footer">
 	<p class="icons">
